@@ -7,6 +7,36 @@ class AppStrings {
   static const submit = "submit";
 
 
+  //error handler
+  static const String badRequestError = "badRequestError";
+  static const String noContent = "noContent";
+  static const String forbiddenError = "forbiddenError";
+  static const String unauthorizedError = "unauthorizedError";
+  static const String notFoundError = "notFoundError";
+  static const String conflictError = "conflictError";
+  static const String internalServerError = "internalServerError";
+  static const String unknownError = "unknownError";
+  static const String timeoutError = "timeoutError";
+  static const String defaultError = "defaultError";
+  static const String cacheError = "cacheError";
+  static const String noInternetError = "noInternetError";
+  static const String emailAlreadyExistsError = "emailAlreadyExistsError";
+  static const String phoneNumberAlreadyExistsError =
+      "phoneNumberAlreadyExistsError";
+  static const String emailAndPhoneNumberAlreadyExistsError =
+      "emailAndPhoneNumberAlreadyExistsError";
+  static const String emailLoginFailedError = "emailLoginFailedError";
+  static const String invalidVerificationCodeError =
+      "invalidVerificationCodeError";
+  static const String tokenExpiredError = "tokenExpiredError";
+  static const String missingDataError = "missingDataError";
+
+  static const String emptyContent = "emptyContent";
+  static const String intentError = "intentError";
+  static const String areYouSure = "areYouSure";
+  static const String sure = "sure";
+  static const String cancel = "cancel";
+
 
 
 }
