@@ -6,6 +6,10 @@ abstract class BaseState {
   final DisplayType displayType;
   BaseState({this.displayType = DisplayType.fullScreen});
 }
+
+class InitState extends BaseState {}
+
+
 class EmptyState extends BaseState {
   EmptyState({super.displayType, this.retry});
 

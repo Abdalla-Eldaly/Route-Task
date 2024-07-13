@@ -1,9 +1,14 @@
 
+
 import 'package:bloc/bloc.dart';
-abstract class BaseCubit extends Cubit{
-  BaseCubit(super.initialState);
 
-  void start(){}
-  void dispose(){}
+import 'base_states.dart';
 
+abstract class BaseCubit extends Cubit<BaseState> {
+  BaseCubit() : super(InitState());
+
+  void start();
+  void dispose(
+
+      );
 }
