@@ -30,6 +30,7 @@ class AppStrings {
       "invalidVerificationCodeError";
   static const String tokenExpiredError = "tokenExpiredError";
   static const String missingDataError = "missingDataError";
+  static const String loginFailed = "loginFailed";
 
   static const String emptyContent = "emptyContent";
   static const String intentError = "intentError";
