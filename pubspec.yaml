@@ -44,7 +44,7 @@ dependencies:
   bloc:
   flutter_bloc:
   rxdart:
-  get_it:
+  get_it: ^7.7.0
   pretty_dio_logger:
   lottie:
 

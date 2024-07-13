@@ -4,7 +4,7 @@ import 'package:route_task/domain/models/models.dart';
 import 'package:route_task/domain/repository/repository.dart';
 import 'package:route_task/domain/usecase/base_usecase.dart';
 
-abstract class HomeUseCase extends BaseUseCase<void ,ProductObject>{
+ class HomeUseCase extends BaseUseCase<void ,ProductObject>{
   final Repository _repository;
 
   HomeUseCase(this._repository);

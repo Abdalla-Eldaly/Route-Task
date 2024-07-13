@@ -3,7 +3,7 @@
 
 import 'package:flutter/foundation.dart';
 
-import '../../presentaion/resourses/string_manger.dart';
+import '../../presentation/resourses/string_manger.dart';
 import 'failure.dart';
 
 
