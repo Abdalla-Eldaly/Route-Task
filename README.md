@@ -10,16 +10,30 @@ The App layer contains essential configurations and setups for the application. 
 - **App:** The main application class and configurations.
 - **Injectable-Get It:** Dependency injection setup using the injectable and get_it packages.
 - **Extensions:** Important extension methods and classes used throughout the app.
+- **Constants**: Constant values and important classes used across the application.
 
 ### 2. Data Layer
-The Data layer handles data operations, including network requests and data mapping. It contains:
-- **Response:** Classes to handle API responses.
-- **Network:** Network setup, error handling, and internet connectivity checking.
-  - **Failure and Error Handling:** Mechanisms to handle various types of network failures and errors.
-  - **Internet Checker:** Utility to check internet connectivity status.
-- **Mapper:** Classes to map data between different layers.
-- **Repository Implementation:** Concrete implementations of repositories defined in the Domain layer.
-- **Data Source:** Sources of data, such as remote APIs or local databases.
+The Data layer is responsible for handling all data-related operations, including fetching data from remote servers, local databases, and transforming data between different formats.
+
+#### Contents:
+- **Response:**
+  - Data models representing API responses.
+- **Network:**
+  - Network service setup and API client configurations.
+  - Error handling classes and mechanisms.
+  - **Failure and Error Handling:**
+    - Classes to manage different types of errors and failures from the network layer.
+  - **Internet Checker:**
+    - Utility to check the current internet connectivity status.
+- **Mapper:**
+  - Classes to map data from API models to domain models.
+- **Repository Implementation:**
+  - Concrete implementations of repository interfaces defined in the Domain layer.
+- **Data Source:**
+  - Sources of data, including remote APIs and local databases.
+- **App API**: API definitions and endpoints.
+- **Dio Factory**: Configuration and setup for Dio, a powerful HTTP client for Dart.
+
 
 ### 3. Domain Layer
 The Domain layer contains the core business logic of the application. It includes:
@@ -29,10 +43,6 @@ The Domain layer contains the core business logic of the application. It include
 
 ### 4. Presentation Layer
 The Presentation layer handles the user interface and user interaction logic. It includes:
-- **Base Cubit (Bloc):** Base classes for managing state using the Cubit pattern from the bloc package.
-- **States:** Different states that the UI can be in, managed by the Cubit.
-- **Listener:** Components that react to state changes.
-- **Observer and Builder:** Classes to observe state changes and build UI accordingly.
 - **View and ViewModel:** Separation of UI components (View) from their business logic (ViewModel).
 
 
