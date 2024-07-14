@@ -21,7 +21,7 @@ class SVGAssets {
   static const String routeLogo = "${_basePath}Route_logo.svg";
   static const String search = "${_basePath}🦆 icon _search_.svg";
   static const String shopping = "${_basePath}shopping cart_.svg";
-  static const String favouriteLight = "${_basePath}fav.svg";
+  static const String favouriteLight = "${_basePath}favourite_light.svg";
   static const String plus = "${_basePath}plus.svg";
   static const String star = "${_basePath}🦆 emoji _white medium star_.svg";
 

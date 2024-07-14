@@ -20,10 +20,7 @@ class HomeScreen extends StatelessWidget {
             if (state is ErrorState) {
               Navigator.pop(context);
             }
-            else if (state is StopLoadingState) {
-              Navigator.pop(context);
-              print('_________________');
-            }
+
             baseListener(context, state);
           },
           builder: (context, state) {

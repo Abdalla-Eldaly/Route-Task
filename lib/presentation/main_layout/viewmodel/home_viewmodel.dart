@@ -4,16 +4,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:route_task/presentation/main_layout/viewmodel/states/home_states.dart';
 import 'package:rxdart/rxdart.dart';
 
-
 import '../../../app/di.dart';
 import '../../../domain/models/models.dart';
 import '../../../domain/usecase/home_usecase.dart';
 import '../../base/base_cubit.dart';
 import '../../base/base_states.dart';
 
-class HomeViewModel extends BaseCubit implements HomeViewModelInput, HomeViewModelOutput {
+class HomeViewModel extends BaseCubit
+    implements HomeViewModelInput, HomeViewModelOutput {
   final HomeUseCase _homeUseCase;
-  final BehaviorSubject<List<Product>> _productsStreamController = BehaviorSubject<List<Product>>();
+  final BehaviorSubject<List<Product>> _productsStreamController =
+      BehaviorSubject<List<Product>>();
 
   HomeViewModel(this._homeUseCase);
 
@@ -22,23 +23,20 @@ class HomeViewModel extends BaseCubit implements HomeViewModelInput, HomeViewMod
 
   @override
   void start() {
-
     _getProductsHomeData();
-
   }
 
   void _getProductsHomeData() {
-    emit(LoadingState(displayType: DisplayType.popUpDialog));
+    emit(LoadingState(displayType: DisplayType.fullScreen));
 
     _homeUseCase.call(null).then((value) {
       value.fold(
-            (l) {
+        (l) {
           emit(ErrorState(failure: l, displayType: DisplayType.fullScreen));
         },
-            (homeObject) {
+        (homeObject) {
           _productsStreamController.add(homeObject.products ?? []);
-          StopLoadingState();
-
+          emit(StopLoadingState());
         },
       );
     });

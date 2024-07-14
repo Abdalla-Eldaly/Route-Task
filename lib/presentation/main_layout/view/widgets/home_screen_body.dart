@@ -58,9 +58,9 @@ class HomeScreenBody extends StatelessWidget {
                   } else if (snapshot.hasError) {
                     return Lottie.asset(LottieAssets.error);
                   } else {
-                    return Padding(
-                      padding: const EdgeInsets.all(AppPadding.p50),
-                      child: Lottie.asset(LottieAssets.loading),
+                    return const Padding(
+                      padding: EdgeInsets.all(AppPadding.p50),
+                      child: CircularProgressIndicator(),
                     );
                   }
                 },

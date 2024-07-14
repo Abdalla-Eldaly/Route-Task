@@ -58,10 +58,7 @@ class ProductGridItem extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset(SVGAssets.favouriteLight),
-                  )
+                  SvgPicture.asset(SVGAssets.favouriteLight)
                 ],
               ),
               Stack(
