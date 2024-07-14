@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:route_task/presentation/resourses/assets_manger.dart';
 import 'package:route_task/presentation/resourses/color_manager.dart';
@@ -9,10 +7,7 @@ import 'package:route_task/presentation/resourses/text_style.dart';
 import 'package:route_task/presentation/resourses/value_manger.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import '../../../domain/models/models.dart';
-import 'main_image.dart';
-
-class ProductGridItem extends StatelessWidget {
+class ProductGridItem extends StatefulWidget {
   final String productImage;
   final String title;
   final String description;
@@ -29,6 +24,12 @@ class ProductGridItem extends StatelessWidget {
       required this.discount,
       required this.rating});
 
+  @override
+  State<ProductGridItem> createState() => _ProductGridItemState();
+}
+
+class _ProductGridItemState extends State<ProductGridItem> {
+  bool isFav = false;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -54,11 +55,25 @@ class ProductGridItem extends StatelessWidget {
                     child: CachedNetworkImage(
                       width: constraints.maxWidth,
                       height: constraints.maxHeight / 2,
-                      imageUrl: productImage,
+                      imageUrl: widget.productImage,
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SvgPicture.asset(SVGAssets.favouriteLight)
+                  InkWell(
+                      onTap: () {
+                        setState(() {
+                          isFav = !isFav;
+                        });
+                      },
+                      child: isFav
+                          ? SvgPicture.asset(
+                              SVGAssets.favouriteDark,
+                              width: AppSize.s60,
+                            )
+                          : SvgPicture.asset(
+                              SVGAssets.favouriteLight,
+                              width: AppSize.s60,
+                            ))
                 ],
               ),
               Stack(
@@ -72,13 +87,13 @@ class ProductGridItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          title,
+                          widget.title,
                           style: AppTextStyles.subhead(context),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
                         Text(
-                          description,
+                          widget.description,
                           style: AppTextStyles.subhead(context),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
@@ -88,12 +103,12 @@ class ProductGridItem extends StatelessWidget {
                           child: Row(
                             children: [
                               Text(
-                                '${AppStrings.egyptionCoin} ${price}',
+                                '${AppStrings.egyptionCoin} ${widget.price}',
                                 style: AppTextStyles.subhead(context),
                               ),
                               const SizedBox(width: AppSize.s14),
                               Text(
-                                '${discount} ${AppStrings.egyptionCoin}',
+                                '${widget.discount} ${AppStrings.egyptionCoin}',
                                 style: TextStyle(
                                   color: ColorManager.primary.withOpacity(.5),
                                   decoration: TextDecoration.lineThrough,
@@ -108,11 +123,10 @@ class ProductGridItem extends StatelessWidget {
                           child: Row(
                             children: [
                               Text(
-                                '${AppStrings.review} (${rating})',
+                                '${AppStrings.review} (${widget.rating})',
                                 style: AppTextStyles.smallText(context),
                               ),
                               const SizedBox(width: AppSize.s3),
-
                               SvgPicture.asset(SVGAssets.star),
                               const SizedBox(width: AppSize.s14),
                             ],
