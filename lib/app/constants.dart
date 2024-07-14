@@ -10,6 +10,5 @@ class Constants {
 
   static const double zeroDouble = 0.0;
   static const List<String> emptyList = [];
-  static const String defaultDateTime = '1970-01-01T00:00:00Z';
 
 }

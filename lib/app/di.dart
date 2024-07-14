@@ -30,7 +30,7 @@ Future<void> initAppModule() async {
   sl.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl(sl()));
 
   //Repository
-  sl.registerLazySingleton<Repository>(() => RepositoryImpl(sl(), sl(), sl()));
+  sl.registerLazySingleton<Repository>(() => RepositoryImpl(sl(), sl()));
 
 }
 

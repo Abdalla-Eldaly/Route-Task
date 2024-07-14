@@ -12,9 +12,8 @@ import '../network/network_info.dart';
 class RepositoryImpl implements Repository {
   final NetworkInfo _networkInfo;
   final RemoteDataSource _remoteDataSource;
-  final AppServicesClient _appServicesClient;
 
-  RepositoryImpl(this._networkInfo, this._remoteDataSource, this._appServicesClient);
+  RepositoryImpl(this._networkInfo, this._remoteDataSource,);
 
   @override
   Future<Either<Failure, ProductObject>> getProductData() async {
@@ -30,13 +29,12 @@ class RepositoryImpl implements Repository {
           return Left(Failure(ApiInternalStatus.FAILURE, ResponseMessage.INTERNAL_SERVER_ERROR));
         }
       } catch (error) {
-        print('error is =>>>>> ${error.toString()}');
 
         return Left(Failure(ApiInternalStatus.FAILURE, ResponseMessage.INTERNAL_SERVER_ERROR));
       }
     } else {
 
-      return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+      return Left(DataSourceErrors.NO_INTERNET_CONNECTION.getFailure());
     }
   }
 
@@ -57,7 +55,7 @@ class RepositoryImpl implements Repository {
         return Left(Failure(ApiInternalStatus.FAILURE, ResponseMessage.INTERNAL_SERVER_ERROR));
       }
     } else {
-      return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+      return Left(DataSourceErrors.NO_INTERNET_CONNECTION.getFailure());
     }
   }
 

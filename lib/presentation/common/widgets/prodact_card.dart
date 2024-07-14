@@ -88,13 +88,13 @@ class _ProductGridItemState extends State<ProductGridItem> {
                       children: [
                         Text(
                           widget.title,
-                          style: AppTextStyles.subhead(context),
+                          style: AppTextStyles.generalText(context),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
                         Text(
                           widget.description,
-                          style: AppTextStyles.subhead(context),
+                          style: AppTextStyles.generalText(context),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
@@ -104,7 +104,7 @@ class _ProductGridItemState extends State<ProductGridItem> {
                             children: [
                               Text(
                                 '${AppStrings.egyptionCoin} ${widget.price}',
-                                style: AppTextStyles.subhead(context),
+                                style: AppTextStyles.generalText(context),
                               ),
                               const SizedBox(width: AppSize.s14),
                               Text(
@@ -132,7 +132,7 @@ class _ProductGridItemState extends State<ProductGridItem> {
                             ],
                           ),
                         ),
-                        const SizedBox(height: AppSize.s10),
+                        const SizedBox(height: AppSize.s12),
                       ],
                     ),
                   ),

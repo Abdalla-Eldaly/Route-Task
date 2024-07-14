@@ -6,6 +6,35 @@ import 'font_manger.dart';
 class AppTextStyles {
   AppTextStyles._();
 
+
+
+
+// general text
+  static TextStyle generalText(BuildContext? context) => getSemiBoldStyle(
+    fontFamily: FontConstants.arabic,
+    color: ColorManager.primary,
+    fontSize: FontSize.f14,
+
+  );
+
+  //small text
+  static TextStyle smallText(BuildContext? context) => getSemiBoldStyle(
+    fontFamily: FontConstants.arabic,
+    color: ColorManager.primary,
+    fontSize: FontSize.f13,
+
+  );
+
+
+
+  // hintTextStyle
+  static TextStyle hintTextStyle(BuildContext? context) => getRegularStyle(
+    fontFamily: FontConstants.english,
+    color: ColorManager.primary.withOpacity(.5),
+    fontSize: FontSize.f17,
+  );
+
+
   // Base States
   static TextStyle baseStatesMessageTextStyle(BuildContext? context) => getBoldStyle(
     fontFamily: FontConstants.english,
@@ -88,19 +117,5 @@ class AppTextStyles {
     fontSize: FontSize.f10,
   );
 
-  // hintTextStyle
-  static TextStyle hintTextStyle(BuildContext? context) => getRegularStyle(
-    fontFamily: FontConstants.english,
-    color: ColorManager.primary.withOpacity(.5),
-    fontSize: FontSize.f17,
-  );
-
-
-  static TextStyle smallText(BuildContext? context) => getSemiBoldStyle(
-    fontFamily: FontConstants.arabic,
-    color: ColorManager.primary,
-    fontSize: FontSize.f14,
-
-  );
 
 }

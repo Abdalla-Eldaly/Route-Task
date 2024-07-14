@@ -40,7 +40,7 @@ class AppStrings {
   static const String missingDataError = "missingDataError";
   static const String loginFailed = "loginFailed";
 
-  static const String emptyContent = "emptyContent";
+  static const String emptyContent = "No data result";
   static const String intentError = "intentError";
   static const String areYouSure = "areYouSure";
   static const String sure = "sure";

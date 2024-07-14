@@ -8,7 +8,7 @@ import 'app/di.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await initAppModule();
-  Bloc.observer = MyBlocObserver();
+  Bloc.observer = AppMyBlocObserver();
   runApp(const MyApp());
 }
 

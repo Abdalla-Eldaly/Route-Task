@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:route_task/presentation/common/widgets/main_text_field.dart';
 import 'package:route_task/presentation/resources/color_manager.dart';
+import 'package:route_task/presentation/resources/text_style.dart';
 
 import '../../../../domain/models/models.dart';
 import '../../../common/widgets/prodact_card.dart';
@@ -41,7 +42,6 @@ class SearchBodyScreen extends StatelessWidget {
                       mainAxisSpacing: AppSize.s10,
                       crossAxisSpacing: AppSize.s5),
                   shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
                     final item = snapshot.data?[index];
@@ -56,7 +56,12 @@ class SearchBodyScreen extends StatelessWidget {
                   },
                 );
               } else if (snapshot.hasData) {
-                return Lottie.asset(LottieAssets.empty);
+                return Center(child: Column(
+                  children: [
+                  Lottie.asset(LottieAssets.empty),
+                  Text(AppStrings.emptyContent,style: AppTextStyles.subhead(context),)
+                  ],
+                ));
               } else if (snapshot.hasError) {
                 return Lottie.asset(LottieAssets.error);
               } else {

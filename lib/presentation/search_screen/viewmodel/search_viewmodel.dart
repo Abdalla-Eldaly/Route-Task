@@ -31,7 +31,6 @@ class SearchViewModel extends BaseCubit implements SearchViewModelInput, SearchV
   }
 
   Future<void> findProducts() async {
-    // emit(LoadingState(displayType: DisplayType.popUpDialog));
     await _searchProductUseCase(SearchProductUseCaseInput(query: _searchController.text))
         .then((value) {
       value.fold(
@@ -46,8 +45,7 @@ class SearchViewModel extends BaseCubit implements SearchViewModelInput, SearchV
         },
       );
     }).catchError((error) {
-      emit(ErrorState(failure: Failure(ApiInternalStatus.FAILURE, 'Internal server error'), displayType: DisplayType.popUpDialog));
-      _productStreamController.addError('Internal server error');
+      emit(ErrorState(failure: Failure(ApiInternalStatus.FAILURE, ResponseMessage.INTERNAL_SERVER_ERROR), displayType: DisplayType.popUpDialog));
     });
   }
 

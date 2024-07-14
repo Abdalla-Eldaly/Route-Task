@@ -6,13 +6,12 @@ import 'package:flutter/foundation.dart';
 import '../../presentation/resources/string_manger.dart';
 import 'failure.dart';
 
-
 class ApiInternalStatus {
   static const int SUCCESS = 0;
   static const int FAILURE = 1;
 }
 
-enum DataSource {
+enum DataSourceErrors {
   SUCCESS,
   NO_CONTENT,
   BAD_REQUEST,
@@ -102,50 +101,50 @@ class ResponseMessage {
   static const String DEFAULT = AppStrings.defaultError;
 }
 
-extension DataSourceExtension on DataSource {
+extension DataSourceExtension on DataSourceErrors {
   Failure getFailure() {
     switch (this) {
-      case DataSource.SUCCESS:
+      case DataSourceErrors.SUCCESS:
         return Failure(
           ResponseCode.SUCCESS,
           ResponseMessage.SUCCESS,
         );
-      case DataSource.NO_CONTENT:
+      case DataSourceErrors.NO_CONTENT:
         return Failure(
           ResponseCode.NO_CONTENT,
           ResponseMessage.NO_CONTENT,
         );
-      case DataSource.BAD_REQUEST:
+      case DataSourceErrors.BAD_REQUEST:
         return Failure(
           ResponseCode.BAD_REQUEST,
           ResponseMessage.BAD_REQUEST,
         );
-      case DataSource.FORBIDDEN:
+      case DataSourceErrors.FORBIDDEN:
         return Failure(
           ResponseCode.FORBIDDEN,
           ResponseMessage.FORBIDDEN,
         );
-      case DataSource.UNAUTORISED:
+      case DataSourceErrors.UNAUTORISED:
         return Failure(
           ResponseCode.UNAUTORISED,
           ResponseMessage.UNAUTORISED,
         );
-      case DataSource.NOT_FOUND:
+      case DataSourceErrors.NOT_FOUND:
         return Failure(
           ResponseCode.NOT_FOUND,
           ResponseMessage.NOT_FOUND,
         );
-      case DataSource.INTERNAL_SERVER_ERROR:
+      case DataSourceErrors.INTERNAL_SERVER_ERROR:
         return Failure(
           ResponseCode.INTERNAL_SERVER_ERROR,
           ResponseMessage.INTERNAL_SERVER_ERROR,
         );
-      case DataSource.CONNECT_TIMEOUT:
+      case DataSourceErrors.CONNECT_TIMEOUT:
         return Failure(
           ResponseCode.CONNECT_TIMEOUT,
           ResponseMessage.CONNECT_TIMEOUT,
         );
-      case DataSource.CANCEL:
+      case DataSourceErrors.CANCEL:
         return Failure(
           ResponseCode.CANCEL,
           ResponseMessage.CANCEL,
@@ -154,65 +153,65 @@ extension DataSourceExtension on DataSource {
     //   return Failure(ResponseCode.LOGIN_FAILED,
     //       ResponseMessage.LOGIN_FAILED);
 
-      case DataSource.RECIEVE_TIMEOUT:
+      case DataSourceErrors.RECIEVE_TIMEOUT:
         return Failure(
           ResponseCode.RECIEVE_TIMEOUT,
           ResponseMessage.RECIEVE_TIMEOUT,
         );
-      case DataSource.SEND_TIMEOUT:
+      case DataSourceErrors.SEND_TIMEOUT:
         return Failure(
           ResponseCode.SEND_TIMEOUT,
           ResponseMessage.SEND_TIMEOUT,
         );
-      case DataSource.CACHE_ERROR:
+      case DataSourceErrors.CACHE_ERROR:
         return Failure(
           ResponseCode.CACHE_ERROR,
           ResponseMessage.CACHE_ERROR,
         );
-      case DataSource.NO_INTERNET_CONNECTION:
+      case DataSourceErrors.NO_INTERNET_CONNECTION:
         return Failure(
           ResponseCode.NO_INTERNET_CONNECTION,
           ResponseMessage.NO_INTERNET_CONNECTION,
         );
-      case DataSource.EMAIL_ALREADY_EXISTS:
+      case DataSourceErrors.EMAIL_ALREADY_EXISTS:
         return Failure(
           ResponseCode.EMAIL_ALREADY_EXISTS,
           ResponseMessage.EMAIL_ALREADY_EXISTS,
         );
-      case DataSource.PHONE_NUMBER_ALREADY_EXISTS:
+      case DataSourceErrors.PHONE_NUMBER_ALREADY_EXISTS:
         return Failure(
           ResponseCode.PHONE_NUMBER_ALREADY_EXISTS,
           ResponseMessage.PHONE_NUMBER_ALREADY_EXISTS,
         );
-      case DataSource.EMAIL_AND_PHONE_NUMBER_ALREADY_EXISTS:
+      case DataSourceErrors.EMAIL_AND_PHONE_NUMBER_ALREADY_EXISTS:
         return Failure(
           ResponseCode.EMAIL_AND_PHONE_NUMBER_ALREADY_EXISTS,
           ResponseMessage.EMAIL_AND_PHONE_NUMBER_ALREADY_EXISTS,
         );
-      case DataSource.EMAIL_LOGIN_FAILED:
+      case DataSourceErrors.EMAIL_LOGIN_FAILED:
         return Failure(
           ResponseCode.EMAIL_LOGIN_FAILED,
           ResponseMessage.EMAIL_LOGIN_FAILED,
         );
-      case DataSource.INVALID_VERIFICATION_CODE:
+      case DataSourceErrors.INVALID_VERIFICATION_CODE:
         return Failure(
           ResponseCode.INVALID_VERIFICATION_CODE,
           ResponseMessage.INVALID_VERIFICATION_CODE,
         );
-      case DataSource.TOKEN_EXPIRED:
+      case DataSourceErrors.TOKEN_EXPIRED:
         return Failure(
           ResponseCode.TOKEN_EXPIRED,
           ResponseMessage.TOKEN_EXPIRED,
         );
-      case DataSource.MISSING_DATA:
+      case DataSourceErrors.MISSING_DATA:
         return Failure(
           ResponseCode.MISSING_DATA,
           ResponseMessage.MISSING_DATA,
         );
-      case DataSource.LOGIN_FAILED:
+      case DataSourceErrors.LOGIN_FAILED:
         return Failure(ResponseCode.LOGIN_FAILED, ResponseMessage.LOGIN_FAILED);
 
-      case DataSource.DEFAULT:
+      case DataSourceErrors.DEFAULT:
         return Failure(
           ResponseCode.DEFAULT,
           ResponseMessage.DEFAULT,
@@ -240,10 +239,10 @@ class ErrorHandler implements Exception {
 
     if (error is Failure) {
       failure = error;
-    } else if (error is DataSource) {
+    } else if (error is DataSourceErrors) {
       failure = error.getFailure();
     } else {
-      failure = DataSource.DEFAULT.getFailure();
+      failure = DataSourceErrors.DEFAULT.getFailure();
     }
   }
 
