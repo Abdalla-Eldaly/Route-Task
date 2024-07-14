@@ -50,5 +50,4 @@ The Presentation layer handles the user interface and user interaction logic. It
 ## Getting Started
 1. Clone the repository:
    ```sh
-   git clone
    https://github.com/yourusername/your-repo-name.git
