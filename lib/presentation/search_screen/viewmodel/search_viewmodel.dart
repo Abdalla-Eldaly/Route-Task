@@ -8,7 +8,6 @@ import '../../../domain/models/models.dart';
 import '../../base/base_cubit.dart';
 import '../../base/base_states.dart';
 import '../../../domain/usecase/search_usecase.dart';
-import '../../common/data_intent/data_intent.dart';
 import 'states/states.dart';
 
 class SearchViewModel extends BaseCubit implements SearchViewModelInput, SearchViewModelOutput {

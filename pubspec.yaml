@@ -49,6 +49,7 @@ dependencies:
   lottie:
   flutter_svg: ^2.0.10+1
   cached_network_image: ^3.3.1
+  mockito: ^5.4.4
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +63,7 @@ dev_dependencies:
   flutter_lints:
   json_serializable:
   build_runner:
+  test: ^1.24.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
