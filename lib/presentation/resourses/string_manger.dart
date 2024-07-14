@@ -7,6 +7,14 @@ class AppStrings {
   static const submit = "submit";
 
 
+
+
+  // home screen
+    static const homeSearch = "what do you search for?";
+    static const egyptionCoin = "EGP";
+    static const review = "review";
+
+
   //error handler
   static const String badRequestError = "badRequestError";
   static const String noContent = "noContent";

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:route_task/presentaion/resourses/string_manger.dart';
+import 'package:route_task/app/di.dart';
+import 'package:route_task/presentation/resourses/string_manger.dart';
 import '../main_layout/view/home_screen.dart';
 
 class Routes {
@@ -14,6 +15,7 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.homeScreenRoute:
+        intiHomeUseCase();
         return MaterialPageRoute(builder: (_) =>  const HomeScreen());
 
 

@@ -13,10 +13,10 @@ class NetworkInfoImpl implements NetworkInfo {
 
   @override
   Future<bool> get isConnected async {
-    if (Platform.isAndroid || Platform.isIOS) {
+    // if (Platform.isAndroid || Platform.isIOS) {
     return await _internetConnectionChecker.hasInternetAccess;
-    } else {
-      return Future(() => true);
-    }
+    // } else {
+    //   return Future(() => true);
+    // }
   }
 }

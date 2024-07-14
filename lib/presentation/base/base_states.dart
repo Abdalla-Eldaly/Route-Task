@@ -2,23 +2,23 @@ import '../../data/network/failure.dart';
 
 enum DisplayType { fullScreen, popUpDialog }
 
-abstract class BaseState {
+abstract class BaseStates {
   final DisplayType displayType;
-  BaseState({this.displayType = DisplayType.fullScreen});
+  BaseStates({this.displayType = DisplayType.fullScreen});
 }
 
-class InitState extends BaseState {}
+class InitState extends BaseStates {}
 
 
-class EmptyState extends BaseState {
+class EmptyState extends BaseStates {
   EmptyState({super.displayType, this.retry});
 
   final void Function()? retry;}
-class LoadingState extends BaseState {
+class LoadingState extends BaseStates {
    LoadingState({super.displayType});
 }
 
-class ErrorState extends BaseState {
+class ErrorState extends BaseStates {
   final Failure failure;
   final void Function()? retry;
 
@@ -28,7 +28,7 @@ class ErrorState extends BaseState {
 
 
 
-class SuccessState extends BaseState {
+class SuccessState extends BaseStates {
   SuccessState(this.message) : super(displayType: DisplayType.popUpDialog);
   final String message;
 }

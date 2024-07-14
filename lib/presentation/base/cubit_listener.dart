@@ -6,7 +6,7 @@ import 'base_states.dart';
 import 'base_widgets.dart';
 
 
-void baseListener(BuildContext context, BaseState state) {
+void baseListener(BuildContext context, BaseStates state) {
   if (state.displayType == DisplayType.fullScreen) return;
 
  if (state is SuccessState) {

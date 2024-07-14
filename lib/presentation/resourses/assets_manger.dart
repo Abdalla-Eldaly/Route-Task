@@ -17,8 +17,12 @@ class IconsAssets {
 
 class SVGAssets {
   SVGAssets._();
-
   static const String _basePath = "assets/svg/";
+  static const String routeLogo = "${_basePath}Route_logo.svg";
+  static const String search = "${_basePath}🦆 icon _search_.svg";
+  static const String shopping = "${_basePath}shopping cart_.svg";
+  static const String favouriteLight = "${_basePath}fav.svg";
+  static const String plus = "${_basePath}plus.svg";
 
 }
 

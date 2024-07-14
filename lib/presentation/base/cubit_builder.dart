@@ -5,16 +5,14 @@ import '../resourses/string_manger.dart';
 import 'base_states.dart';
 import 'base_widgets.dart';
 
-Widget baseBuilder(BuildContext context, BaseState state, Widget content) {
+Widget baseBuilder(BuildContext context, BaseStates state, Widget content) {
   if (state.displayType == DisplayType.popUpDialog) return content;
 
   if (state is SuccessState) {
     //do nothing
     return content;
   } else if (state is LoadingState) {
-    // return BaseWidgets.buildItemsColumn([
-    //   BaseWidgets.buildAnimatedImage(LottieAssets.loading),
-    // ]);
+
     return Center(
       child: BaseWidgets.buildAnimatedImage(LottieAssets.loading),
     );

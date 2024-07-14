@@ -44,9 +44,11 @@ dependencies:
   bloc:
   flutter_bloc:
   rxdart:
-  get_it: ^7.7.0
+  get_it:
   pretty_dio_logger:
   lottie:
+  flutter_svg: ^2.0.10+1
+  cached_network_image: ^3.3.1
 
 dev_dependencies:
   flutter_test:

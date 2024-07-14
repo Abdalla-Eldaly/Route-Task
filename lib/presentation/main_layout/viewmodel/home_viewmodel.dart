@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:route_task/presentation/main_layout/viewmodel/states/home_states.dart';
 import 'package:rxdart/rxdart.dart';
 
 
@@ -21,7 +22,9 @@ class HomeViewModel extends BaseCubit implements HomeViewModelInput, HomeViewMod
 
   @override
   void start() {
+
     _getProductsHomeData();
+
   }
 
   void _getProductsHomeData() {
@@ -34,6 +37,8 @@ class HomeViewModel extends BaseCubit implements HomeViewModelInput, HomeViewMod
         },
             (homeObject) {
           _productsStreamController.add(homeObject.products ?? []);
+          StopLoadingState();
+
         },
       );
     });
@@ -41,6 +46,7 @@ class HomeViewModel extends BaseCubit implements HomeViewModelInput, HomeViewMod
 
   @override
   void dispose() {
+    emit(StopLoadingState());
     _productsStreamController.close();
   }
 

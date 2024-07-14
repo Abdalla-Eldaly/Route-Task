@@ -30,15 +30,7 @@ class BaseWidgets {
     );
   }
 
-  ///not used yet
-  // static Widget buildItemsRow(List<Widget> children) {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     crossAxisAlignment: CrossAxisAlignment.center,
-  //     mainAxisSize: MainAxisSize.min,
-  //     children: children,
-  //   );
-  // }
+
 
   static void showPopUpDialog(BuildContext context, List<Widget> children,
       {List<Widget>? actions}) {
