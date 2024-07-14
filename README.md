@@ -1,5 +1,6 @@
 ## images![Screenshot (124)](https://github.com/user-attachments/assets/b3dfb331-1b9c-4843-95e7-13bf97bbc06e)
 
+![Screenshot (126)](https://github.com/user-attachments/assets/79b737b2-e779-4016-ab7d-2cb7f3919bff)
 
 # Route Task
 
@@ -46,11 +47,15 @@ The Domain layer contains the core business logic of the application. It include
 
 ### 4. Presentation Layer
 The Presentation layer handles the user interface and user interaction logic. It includes:
-- **View and ViewModel:** Separation of UI components (View) from their business logic (ViewModel).
+- **Base Folder:** Foundational components like base cubit, cubit listener, cubit builder, base widgets, and bloc observer.
+- **Common Folder:** Reusable components or utilities shared across different parts of the application.
+- **Resources:** Management utilities for assets, text styles, fonts, colors, routes, styles, strings, themes, and values.
+- **Home Screen:** View and ViewModel for the home screen UI and logic.
+- **Search Functionality:** Implementation of search UI and logic.
 
 
 
 ## Getting Started
 1. Clone the repository:
    ```sh
-   https://github.com/yourusername/your-repo-name.git
+   https://github.com/Abdalla-Eldaly/Route-Task.git
