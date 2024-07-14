@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:route_task/presentation/common/widgets/prodact_card.dart';
 import '../../../../domain/models/models.dart';
-import '../../../resourses/assets_manger.dart';
-import '../../../resourses/value_manger.dart';
+import '../../../resources/assets_manger.dart';
+import '../../../resources/value_manger.dart';
 import '../../viewmodel/home_viewmodel.dart';
 import 'home_header.dart';
 
@@ -54,14 +54,11 @@ class HomeScreenBody extends StatelessWidget {
                       },
                     );
                   } else if (snapshot.hasData) {
-                    return Lottie.asset(LottieAssets.comingSoonEn);
+                    return Lottie.asset(LottieAssets.empty);
                   } else if (snapshot.hasError) {
                     return Lottie.asset(LottieAssets.error);
                   } else {
-                    return const Padding(
-                      padding: EdgeInsets.all(AppPadding.p50),
-                      child: CircularProgressIndicator(),
-                    );
+                    return Container();
                   }
                 },
               ),

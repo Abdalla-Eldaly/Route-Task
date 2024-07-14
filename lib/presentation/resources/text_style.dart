@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:route_task/presentation/resourses/style_manger.dart';
+import 'package:route_task/presentation/resources/style_manger.dart';
 import 'color_manager.dart';
 import 'font_manger.dart';
 

@@ -1,4 +1,4 @@
-import 'package:route_task/presentation/resourses/value_manger.dart';
+import 'package:route_task/presentation/resources/value_manger.dart';
 
 import 'color_manager.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../resourses/assets_manger.dart';
-import '../resourses/string_manger.dart';
+import '../resources/assets_manger.dart';
+import '../resources/string_manger.dart';
 import 'base_states.dart';
 import 'base_widgets.dart';
 

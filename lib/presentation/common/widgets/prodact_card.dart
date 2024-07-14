@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:route_task/presentation/resourses/assets_manger.dart';
-import 'package:route_task/presentation/resourses/color_manager.dart';
-import 'package:route_task/presentation/resourses/string_manger.dart';
-import 'package:route_task/presentation/resourses/text_style.dart';
-import 'package:route_task/presentation/resourses/value_manger.dart';
+import 'package:route_task/presentation/resources/assets_manger.dart';
+import 'package:route_task/presentation/resources/color_manager.dart';
+import 'package:route_task/presentation/resources/string_manger.dart';
+import 'package:route_task/presentation/resources/text_style.dart';
+import 'package:route_task/presentation/resources/value_manger.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class ProductGridItem extends StatefulWidget {

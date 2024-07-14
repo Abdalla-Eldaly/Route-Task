@@ -11,6 +11,9 @@ abstract class AppServicesClient {
 
   @GET('/products')
   Future<ProductListResponse> getHomeProductData();
+
+  @GET("/products/search")
+  Future<ProductListResponse> searchProducts(@Query("q") String query);
 }
 
 class AppServiceClientImpl {
@@ -21,5 +24,9 @@ class AppServiceClientImpl {
 
   Future<ProductListResponse> getHomeProductData() {
     return _client.getHomeProductData();
+  }
+
+  Future<ProductListResponse> searchProducts(String query) {
+    return _client.searchProducts(query);
   }
 }

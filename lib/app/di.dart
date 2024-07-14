@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:route_task/domain/usecase/search_usecase.dart';
 
 import '../data/data_source/remote_data_source.dart';
 
@@ -29,12 +30,18 @@ Future<void> initAppModule() async {
   sl.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl(sl()));
 
   //Repository
-  sl.registerLazySingleton<Repository>(() => RepositoryImpl(sl(), sl()));
+  sl.registerLazySingleton<Repository>(() => RepositoryImpl(sl(), sl(), sl()));
 
 }
 
 void intiHomeUseCase() {
   if (GetIt.instance.isRegistered<HomeUseCase>() == false) {
     sl.registerFactory<HomeUseCase>(() => HomeUseCase(sl()));
+  }
+}
+
+void intiHomeSearchUseCase() {
+  if (GetIt.instance.isRegistered<SearchProductUseCase>() == false) {
+    sl.registerFactory<SearchProductUseCase>(() => SearchProductUseCase(sl()));
   }
 }

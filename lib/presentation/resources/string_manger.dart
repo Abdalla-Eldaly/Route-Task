@@ -27,7 +27,7 @@ class AppStrings {
   static const String timeoutError = "timeoutError";
   static const String defaultError = "defaultError";
   static const String cacheError = "cacheError";
-  static const String noInternetError = "noInternetError";
+  static const String noInternetError = "Check your internet connection";
   static const String emailAlreadyExistsError = "emailAlreadyExistsError";
   static const String phoneNumberAlreadyExistsError =
       "phoneNumberAlreadyExistsError";

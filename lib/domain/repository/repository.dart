@@ -5,4 +5,7 @@ import '../models/models.dart';
 
 abstract class Repository{
   Future<Either<Failure, ProductObject>>getProductData();
+
+  Future<Either<Failure, ProductObject>> searchProducts(String query);
+
 }
