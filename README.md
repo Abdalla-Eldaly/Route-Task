@@ -54,23 +54,23 @@ The Presentation layer handles the user interface and user interaction logic. It
 - **Search Functionality:** Implementation of search UI and logic.
 
 
-### 🛠 Dependencies
-  cupertino_icons:
-  json_annotation:
-  retrofit:
-  retrofit_generator:
-  dartz:
-  network_info_plus:
-  internet_connection_checker_plus:
-  bloc:
-  flutter_bloc:
-  rxdart:
-  get_it:
-  pretty_dio_logger:
-  lottie:
-  flutter_svg: 
-  cached_network_image: 
-  mockito: 
+## Dependencies
+
+- cupertino_icons
+- json_annotation
+- retrofit
+- dartz
+- network_info_plus
+- internet_connection_checker_plus
+- bloc
+- flutter_bloc
+- rxdart
+- get_it
+- pretty_dio_logger
+- lottie
+- flutter_svg
+- cached_network_image
+- mockito
 
 ## Getting Started
 1. Clone the repository:
