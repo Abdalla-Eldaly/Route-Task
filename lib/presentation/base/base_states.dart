@@ -14,6 +14,7 @@ class EmptyState extends BaseStates {
   EmptyState({super.displayType, this.retry});
 
   final void Function()? retry;}
+
 class LoadingState extends BaseStates {
    LoadingState({super.displayType});
 }

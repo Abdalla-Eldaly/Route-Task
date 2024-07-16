@@ -47,9 +47,9 @@ dependencies:
   get_it:
   pretty_dio_logger:
   lottie:
-  flutter_svg: ^2.0.10+1
-  cached_network_image: ^3.3.1
-  mockito: ^5.4.4
+  flutter_svg:
+  cached_network_image:
+  mockito:
 
 dev_dependencies:
   flutter_test:

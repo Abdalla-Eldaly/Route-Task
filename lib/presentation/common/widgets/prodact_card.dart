@@ -41,44 +41,44 @@ class _ProductGridItemState extends State<ProductGridItem> {
       ),
       child: LayoutBuilder(
         builder: (context, constraints) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          return Stack(
+            alignment: Alignment.bottomRight,
             children: [
-              Stack(
-                alignment: Alignment.topRight,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(AppSize.s16),
-                      topRight: Radius.circular(AppSize.s16),
-                    ),
-                    child: CachedNetworkImage(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight / 2,
-                      imageUrl: widget.productImage,
-                      fit: BoxFit.cover,
-                    ),
+                  Stack(
+                    alignment: Alignment.topRight,
+                    children: [
+                      ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(AppSize.s16),
+                          topRight: Radius.circular(AppSize.s16),
+                        ),
+                        child: CachedNetworkImage(
+                          width: constraints.maxWidth,
+                          height: constraints.maxHeight / 2,
+                          imageUrl: widget.productImage,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      InkWell(
+                          onTap: () {
+                            setState(() {
+                              isFav = !isFav;
+                            });
+                          },
+                          child: isFav
+                              ? SvgPicture.asset(
+                                  SVGAssets.favouriteDark,
+                                  width: AppSize.s60,
+                                )
+                              : SvgPicture.asset(
+                                  SVGAssets.favouriteLight,
+                                  width: AppSize.s60,
+                                ))
+                    ],
                   ),
-                  InkWell(
-                      onTap: () {
-                        setState(() {
-                          isFav = !isFav;
-                        });
-                      },
-                      child: isFav
-                          ? SvgPicture.asset(
-                              SVGAssets.favouriteDark,
-                              width: AppSize.s60,
-                            )
-                          : SvgPicture.asset(
-                              SVGAssets.favouriteLight,
-                              width: AppSize.s60,
-                            ))
-                ],
-              ),
-              Stack(
-                alignment: Alignment.bottomRight,
-                children: [
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: AppSize.s10),
@@ -135,13 +135,14 @@ class _ProductGridItemState extends State<ProductGridItem> {
                         const SizedBox(height: AppSize.s12),
                       ],
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: AppPadding.p8),
-                    child: SvgPicture.asset(SVGAssets.plus),
                   )
                 ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: AppPadding.p8,bottom: AppPadding.p10),
+                child: SvgPicture.asset(SVGAssets.plus),
               )
+
             ],
           );
         },

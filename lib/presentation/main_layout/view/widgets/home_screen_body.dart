@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:route_task/presentation/common/widgets/prodact_card.dart';
 import '../../../../domain/models/models.dart';
